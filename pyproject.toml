@@ -1,0 +1,9 @@
+[project]
+name = "mongoliannewsfeed"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "selenium>=4.27.1",
+]
