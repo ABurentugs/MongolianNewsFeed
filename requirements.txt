@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+selenium
+feedparser
+requests
+jinja2
