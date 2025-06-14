@@ -10,12 +10,16 @@ RUN apt-get update && apt-get install -y \
 ENV CHROME_BIN=/usr/bin/chromium
 ENV CHROMEDRIVER_BIN=/us/bin/chromedriver
 
+COPY --from=ghcr.io/astral-sh/uv:0.7.12 /uv /uvx /bin/
+
+ADD . /app
+
 WORKDIR /app
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-ENV PATH="/root/.cargo/bin:$PATH"
 
 COPY . .
-RUN uv pip install --system -r requirements.txt
+
+RUN uv sync --locked
+
 
 EXPOSE 8000
-CMD ["uvicorn", "app.main:app","--host","0.0.0.0","--port","8000"]
+CMD ["uv", "run", "uvicorn", "app.news_app:app","--host","0.0.0.0","--port","8000"]
