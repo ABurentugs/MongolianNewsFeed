@@ -1804,16 +1804,17 @@ input, select, textarea {
 	}
 		.box.feature .symbol > .newslogo img {
 			/* display: block; */
-			align-items: center;
-			/* flex: 2; */
-			width: 40px;
-			height: 40px;
+			/* align-items: center; */
+			/* flex: 1; */
+			/* width: 40px; */
+			height: 10px;
 			/* width: 10px; */
 		}
 		
 		.box.feature .symbol h6 {
-			flex: 1;
-			padding: 2em;
+			/* flex: 1; */
+			/* height: 60px; */
+			/* padding: 2em; */
 			color: grey;
 			/* background: blue; */
 		}
